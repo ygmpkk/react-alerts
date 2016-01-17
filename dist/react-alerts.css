@@ -1,0 +1,99 @@
+.react-alerts {
+  padding: 15px;
+  margin-bottom: 21px;
+  border: none;
+  border-radius: 0;
+}
+.react-alerts .react-alerts-link {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.react-alerts .close {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  float: right;
+  font: inherit;
+  font-size: 22.5px;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0;
+  opacity: 0.4;
+  overflow: visible;
+  padding: 0;
+  position: relative;
+  right: -21px;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  top: -2px;
+  -webkit-appearance: none;
+}
+.react-alerts h4 {
+  margin-top: 0;
+  color: inherit;
+}
+.react-alerts > p,
+.react-alerts > ul {
+  margin-bottom: 0;
+}
+.react-alerts > p + p {
+  margin-top: 5px;
+}
+.react-alerts-dismissable,
+.react-alerts-dismissible {
+  padding-right: 35px;
+}
+.react-alerts-dismissable .close,
+.react-alerts-dismissible .close {
+  position: relative;
+  top: -2px;
+  right: -21px;
+  color: inherit;
+}
+.react-alerts-success {
+  background-color: #3fb618;
+  border-color: #4e9f15;
+  color: #ffffff;
+}
+.react-alerts-success hr {
+  border-top-color: #438912;
+}
+.react-alerts-success .react-alerts-link {
+  color: #e6e6e6;
+}
+.react-alerts-info {
+  background-color: #9954bb;
+  border-color: #7643a8;
+  color: #ffffff;
+}
+.react-alerts-info hr {
+  border-top-color: #693c96;
+}
+.react-alerts-info .react-alerts-link {
+  color: #e6e6e6;
+}
+.react-alerts-warning {
+  background-color: #ff7518;
+  border-color: #ff4309;
+  color: #ffffff;
+}
+.react-alerts-warning hr {
+  border-top-color: #ee3800;
+}
+.react-alerts-warning .react-alerts-link {
+  color: #e6e6e6;
+}
+.react-alerts-danger {
+  background-color: #ff0039;
+  border-color: #f0005e;
+  color: #ffffff;
+}
+.react-alerts-danger hr {
+  border-top-color: #d60054;
+}
+.react-alerts-danger .react-alerts-link {
+  color: #e6e6e6;
+}
