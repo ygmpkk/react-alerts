@@ -6,13 +6,17 @@ var entry = {};
 if (process.env.NODE_ENV === 'production') {
   entry["react-alerts.min"] = './src/index.js';
 } else {
-  entry["react-alerts"] = './src/index.js';
+  entry["react-alerts.dev"] = './src/index.js';
 }
 
 module.exports = {
   externals: {
-    "classnames": "classNames",
-    "react": "React"
+    react: {
+      root: 'React',
+      commonjs: 'react',
+      commonjs2: 'react',
+      amd: 'react'
+    }
   },
 
   entry: entry,
@@ -39,8 +43,13 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ['es2015', 'react'],
+          presets: [
+            'es2015',
+            'react',
+            'stage-0'
+          ],
           plugins: [
+            'add-module-exports',
             'syntax-object-rest-spread'
           ]
         }
