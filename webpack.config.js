@@ -26,7 +26,7 @@ module.exports = {
     filename: '[name].js',
 
     // name of the global var: "Mondavi"
-    library: 'ReactAlert',
+    library: 'ReactAlerts',
 
     // export itself to a global var
     libraryTarget: 'umd'
