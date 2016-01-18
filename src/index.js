@@ -66,6 +66,6 @@ const ReactAlerts = React.createClass({
 
 });
 
-ReactAlerts.version = '0.1.2';
+ReactAlerts.version = '0.1.3';
 
 export default ReactAlerts;
