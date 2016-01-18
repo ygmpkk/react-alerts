@@ -1,6 +1,6 @@
 {
   "name": "react-alerts",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A simple react component for displaying Alert banners.",
   "main": "dist/react-alerts.js",
   "scripts": {
