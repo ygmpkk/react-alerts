@@ -26,3 +26,9 @@ ReactDOM.render(
   document.body
 );
 ```
+
+## Examples
+
+* [Basic Usage][1]
+
+[1]: http://dennisduong.github.io/react-alerts/examples/
