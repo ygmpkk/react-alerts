@@ -10,25 +10,28 @@
   text-decoration: underline;
 }
 .react-alerts .close {
-  background: transparent;
-  border: 0;
-  color: inherit;
-  cursor: pointer;
   float: right;
-  font: inherit;
-  font-size: 22.5px;
+  font-size: 21px;
   font-weight: bold;
   line-height: 1;
-  margin: 0;
-  opacity: 0.4;
-  overflow: visible;
-  padding: 0;
-  position: relative;
-  right: -21px;
+  color: #fff;
+  text-shadow: 0 1px 0 #fff;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+}
+.react-alerts .close :hover,
+.react-alerts .close :focus {
+  color: #fff;
   text-decoration: none;
-  text-shadow: none;
-  text-transform: none;
-  top: -2px;
+  cursor: pointer;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+.react-alerts button.close {
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
   -webkit-appearance: none;
 }
 .react-alerts h4 {
@@ -42,11 +45,9 @@
 .react-alerts > p + p {
   margin-top: 5px;
 }
-.react-alerts-dismissable,
 .react-alerts-dismissible {
   padding-right: 35px;
 }
-.react-alerts-dismissable .close,
 .react-alerts-dismissible .close {
   position: relative;
   top: -2px;

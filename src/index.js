@@ -1,4 +1,5 @@
 import React  from 'react';
+import classNames from 'classnames';
 
 /**
  * A React component for displaying pretty alert banners.
@@ -20,44 +21,62 @@ const ReactAlerts = React.createClass({
     className: React.PropTypes.string,
 
     /**
+     * Specify class-prefix.
+     *
+     * defaults to "react-alerts"
+     */
+    classPrefix: React.PropTypes.string,
+
+    /**
      * When `true` allows the user to dismiss the alert. When a user dismisses
      * an alert, the `onDismiss` function will be executed.
+     *
+     * defaults to `false`
      */
-    dismissable: React.PropTypes.bool,
+    dismissible: React.PropTypes.bool,
 
     /**
      * Fires when a user clicks on the dismiss button.
      */
-    onDismiss: React.PropTypes.func
+    onRequestDismiss: React.PropTypes.func
   },
 
   getDefaultProps() {
     return {
       alertStyle: 'info',
       className: '',
-      dismissable: true,
-      onDismiss: function(){}
+      classPrefix: 'react-alerts',
+      dismissible: false
     };
   },
 
   render() {
-    let {
-      className,
+    const {
       alertStyle,
       children,
-      dismissable,
-      onDismiss,
+      className,
+      classPrefix,
+      dismissible,
+      onRequestDismiss,
       ...props
     } = this.props;
+    let classes = classNames(
+      className, classPrefix, classPrefix + '-' + alertStyle);
 
-    className += ' react-alerts react-alerts-' + alertStyle;
-
-    if (dismissable) className += ' react-alerts-dismissable';
+    if (dismissible) {
+      classes = classNames(classes, classPrefix + '-dismissible');
+    }
 
     return (
-      <div {...props} className={className}>
-        {dismissable &&
-          <button type="button" className="close" onClick={onDismiss}>×</button>
+      <div {...props} className={classes}>
+        {dismissible &&
+          <button
+            type="button"
+            className="close"
+            onClick={onRequestDismiss}
+          >
+            ×
+          </button>
         }
         {children}
       </div>
@@ -66,6 +85,6 @@ const ReactAlerts = React.createClass({
 
 });
 
-ReactAlerts.version = '0.1.3';
+ReactAlerts.version = '0.2.0';
 
 export default ReactAlerts;

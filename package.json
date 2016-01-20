@@ -4,8 +4,8 @@
   "description": "A simple react component for displaying Alert banners.",
   "main": "dist/react-alerts.js",
   "scripts": {
-    "build": "babel --plugins transform-es2015-modules-umd --module-id ReactAlerts -m umd src/index.js > dist/react-alerts.js",
-    "deploy": "NODE_ENV=production webpack -p",
+    "build": "webpack",
+    "minify": "NODE_ENV=production webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --progress --colors --watch"
   },
@@ -34,7 +34,9 @@
     "babel-preset-es2015": "6.3.13",
     "babel-preset-react": "6.3.13",
     "babel-preset-stage-0": "6.3.13",
+    "classnames": "2.2.3",
     "react": "0.14.6",
+    "react-dom": "0.14.6",
     "webpack": "1.12.11"
   }
 }

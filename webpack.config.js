@@ -6,7 +6,7 @@ var entry = {};
 if (process.env.NODE_ENV === 'production') {
   entry["react-alerts.min"] = './src/index.js';
 } else {
-  entry["react-alerts.dev"] = './src/index.js';
+  entry["react-alerts"] = './src/index.js';
 }
 
 module.exports = {
@@ -16,6 +16,12 @@ module.exports = {
       commonjs: 'react',
       commonjs2: 'react',
       amd: 'react'
+    },
+    "classnames": {
+      "amd": 'classnames',
+      "commonjs": 'classnames',
+      "commonjs2": 'classnames',
+      "root": "classNames"
     }
   },
 
