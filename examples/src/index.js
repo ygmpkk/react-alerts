@@ -1,4 +1,4 @@
-var ReactAlerts = require('../../dist/react-alerts');
+var Alert = require('../../dist/react-alerts');
 var React = require('react');
 var ReactDOM = require('react-dom');
 
@@ -15,31 +15,32 @@ var App = React.createClass({
       <div className="react-alerts-demo">
         <h3>react-alerts</h3>
 
-        <ReactAlerts>
+        <Alert>
           Info style
-        </ReactAlerts>
+        </Alert>
 
-        <ReactAlerts alertStyle="success">
+        <Alert alertStyle="success">
           Success style
-        </ReactAlerts>
+        </Alert>
 
         {this.state.showWarning &&
-          <ReactAlerts
+          <Alert
             alertStyle="warning"
             dismissible
             onRequestDismiss={this._dismissWarning}
           >
             Warning style and dismissible!
-          </ReactAlerts>
+          </Alert>
         }
 
-        <ReactAlerts alertStyle="danger">
+        <Alert alertStyle="danger">
           Danger style!
-        </ReactAlerts>
+        </Alert>
 
-        <ReactAlerts
+        <Alert
           alertStyle="info"
           style={{
+            maxWidth: 200,
             position: 'absolute',
             top: 25,
             right: 25,
@@ -47,7 +48,7 @@ var App = React.createClass({
           }}
         >
           Easily make "growls"!
-        </ReactAlerts>
+        </Alert>
 
       </div>
     );

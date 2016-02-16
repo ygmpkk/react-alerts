@@ -46,7 +46,7 @@
 
 	'use strict';
 
-	var ReactAlerts = __webpack_require__(1);
+	var Alert = __webpack_require__(1);
 	var React = __webpack_require__(3);
 	var ReactDOM = __webpack_require__(161);
 
@@ -67,17 +67,17 @@
 	        'react-alerts'
 	      ),
 	      React.createElement(
-	        ReactAlerts,
+	        Alert,
 	        null,
 	        'Info style'
 	      ),
 	      React.createElement(
-	        ReactAlerts,
+	        Alert,
 	        { alertStyle: 'success' },
 	        'Success style'
 	      ),
 	      this.state.showWarning && React.createElement(
-	        ReactAlerts,
+	        Alert,
 	        {
 	          alertStyle: 'warning',
 	          dismissible: true,
@@ -86,15 +86,16 @@
 	        'Warning style and dismissible!'
 	      ),
 	      React.createElement(
-	        ReactAlerts,
+	        Alert,
 	        { alertStyle: 'danger' },
 	        'Danger style!'
 	      ),
 	      React.createElement(
-	        ReactAlerts,
+	        Alert,
 	        {
 	          alertStyle: 'info',
 	          style: {
+	            maxWidth: 200,
 	            position: 'absolute',
 	            top: 25,
 	            right: 25,
@@ -122,7 +123,7 @@
 
 	(function webpackUniversalModuleDefinition(root, factory) {
 		if (( false ? 'undefined' : _typeof(exports)) === 'object' && ( false ? 'undefined' : _typeof(module)) === 'object') module.exports = factory(__webpack_require__(3), __webpack_require__(160));else if (true) !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(3), __webpack_require__(160)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));else if ((typeof exports === 'undefined' ? 'undefined' : _typeof(exports)) === 'object') exports["ReactAlerts"] = factory(require("react"), require("classnames"));else root["ReactAlerts"] = factory(root["React"], root["classNames"]);
-	})(undefined, function (__WEBPACK_EXTERNAL_MODULE_1__, __WEBPACK_EXTERNAL_MODULE_2__) {
+	})(undefined, function (__WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_3__) {
 		return (/******/function (modules) {
 				// webpackBootstrap
 				/******/ // The module cache
@@ -173,6 +174,36 @@
 
 				'use strict';
 
+				Object.defineProperty(exports, "__esModule", {
+					value: true
+				});
+
+				var _Alert = __webpack_require__(1);
+
+				var _Alert2 = _interopRequireDefault(_Alert);
+
+				function _interopRequireDefault(obj) {
+					return obj && obj.__esModule ? obj : { default: obj };
+				}
+
+				_Alert2.default.version = '0.3.0'; /**
+	                                       * A React component for displaying pretty alert banners.
+	                                       */
+
+				exports.default = _Alert2.default;
+				module.exports = exports['default'];
+
+				/***/
+			},
+			/* 1 */
+			/***/function (module, exports, __webpack_require__) {
+
+				'use strict';
+
+				Object.defineProperty(exports, "__esModule", {
+					value: true
+				});
+
 				var _extends = Object.assign || function (target) {
 					for (var i = 1; i < arguments.length; i++) {
 						var source = arguments[i];for (var key in source) {
@@ -183,17 +214,17 @@
 					}return target;
 				};
 
-				Object.defineProperty(exports, "__esModule", {
-					value: true
-				});
-
-				var _react = __webpack_require__(1);
+				var _react = __webpack_require__(2);
 
 				var _react2 = _interopRequireDefault(_react);
 
-				var _classnames = __webpack_require__(2);
+				var _classnames = __webpack_require__(3);
 
 				var _classnames2 = _interopRequireDefault(_classnames);
+
+				var _Link = __webpack_require__(4);
+
+				var _Link2 = _interopRequireDefault(_Link);
 
 				function _interopRequireDefault(obj) {
 					return obj && obj.__esModule ? obj : { default: obj };
@@ -205,12 +236,10 @@
 					}return target;
 				}
 
-				/**
-	    * A React component for displaying pretty alert banners.
-	    */
+				var Alert = _react2.default.createClass({
+					displayName: 'Alert',
 
-				var ReactAlerts = _react2.default.createClass({
-					displayName: 'ReactAlerts',
+					statics: { Link: _Link2.default },
 
 					propTypes: {
 						/**
@@ -226,13 +255,6 @@
 						className: _react2.default.PropTypes.string,
 
 						/**
-	      * Specify class-prefix.
-	      *
-	      * defaults to "react-alerts"
-	      */
-						classPrefix: _react2.default.PropTypes.string,
-
-						/**
 	      * When `true` allows the user to dismiss the alert. When a user dismisses
 	      * an alert, the `onDismiss` function will be executed.
 	      *
@@ -242,15 +264,16 @@
 
 						/**
 	      * Fires when a user clicks on the dismiss button.
+	      *
+	      * @param {SyntheticEvent} event
 	      */
-						onRequestDismiss: _react2.default.PropTypes.func
+						onDismissClick: _react2.default.PropTypes.func
 					},
 
 					getDefaultProps: function getDefaultProps() {
 						return {
 							alertStyle: 'info',
 							className: '',
-							classPrefix: 'react-alerts',
 							dismissible: false
 						};
 					},
@@ -259,37 +282,27 @@
 						var alertStyle = _props.alertStyle;
 						var children = _props.children;
 						var className = _props.className;
-						var classPrefix = _props.classPrefix;
 						var dismissible = _props.dismissible;
 						var onRequestDismiss = _props.onRequestDismiss;
 
-						var props = _objectWithoutProperties(_props, ['alertStyle', 'children', 'className', 'classPrefix', 'dismissible', 'onRequestDismiss']);
+						var others = _objectWithoutProperties(_props, ['alertStyle', 'children', 'className', 'dismissible', 'onRequestDismiss']);
 
-						var classes = (0, _classnames2.default)(className, classPrefix, classPrefix + '-' + alertStyle);
+						var classes = (0, _classnames2.default)(className, {
+							"Alert": true,
+							"Alert-dismissible": dismissible
+						}, 'Alert Alert-' + alertStyle);
 
-						if (dismissible) {
-							classes = (0, _classnames2.default)(classes, classPrefix + '-dismissible');
-						}
-
-						return _react2.default.createElement('div', _extends({}, props, { className: classes }), dismissible && _react2.default.createElement('button', {
-							type: 'button',
+						return _react2.default.createElement('div', _extends({}, others, { className: classes, role: 'alert' }), dismissible && _react2.default.createElement('button', {
+							'aria-label': 'Close',
 							className: 'close',
-							onClick: onRequestDismiss
-						}, '×'), children);
+							onClick: onRequestDismiss,
+							type: 'button'
+						}, _react2.default.createElement('span', { 'aria-hidden': 'true' }, '×')), children);
 					}
 				});
 
-				ReactAlerts.version = '0.1.4';
-
-				exports.default = ReactAlerts;
+				exports.default = Alert;
 				module.exports = exports['default'];
-
-				/***/
-			},
-			/* 1 */
-			/***/function (module, exports) {
-
-				module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
 
 				/***/
 			},
@@ -297,6 +310,74 @@
 			/***/function (module, exports) {
 
 				module.exports = __WEBPACK_EXTERNAL_MODULE_2__;
+
+				/***/
+			},
+			/* 3 */
+			/***/function (module, exports) {
+
+				module.exports = __WEBPACK_EXTERNAL_MODULE_3__;
+
+				/***/
+			},
+			/* 4 */
+			/***/function (module, exports, __webpack_require__) {
+
+				'use strict';
+
+				Object.defineProperty(exports, "__esModule", {
+					value: true
+				});
+
+				var _extends = Object.assign || function (target) {
+					for (var i = 1; i < arguments.length; i++) {
+						var source = arguments[i];for (var key in source) {
+							if (Object.prototype.hasOwnProperty.call(source, key)) {
+								target[key] = source[key];
+							}
+						}
+					}return target;
+				};
+
+				var _react = __webpack_require__(2);
+
+				var _react2 = _interopRequireDefault(_react);
+
+				var _classnames = __webpack_require__(3);
+
+				var _classnames2 = _interopRequireDefault(_classnames);
+
+				function _interopRequireDefault(obj) {
+					return obj && obj.__esModule ? obj : { default: obj };
+				}
+
+				function _objectWithoutProperties(obj, keys) {
+					var target = {};for (var i in obj) {
+						if (keys.indexOf(i) >= 0) continue;if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;target[i] = obj[i];
+					}return target;
+				}
+
+				var Link = _react2.default.createClass({
+					displayName: 'Link',
+
+					propTypes: {
+						children: _react2.default.PropTypes.node,
+						className: _react2.default.PropTypes.string
+					},
+
+					render: function render() {
+						var _props = this.props;
+						var children = _props.children;
+						var className = _props.className;
+
+						var others = _objectWithoutProperties(_props, ['children', 'className']);
+
+						return _react2.default.createElement('a', _extends({}, others, { className: (0, _classnames2.default)(className, 'Alert-link') }), children);
+					}
+				});
+
+				exports.default = Link;
+				module.exports = exports['default'];
 
 				/***/
 			}
@@ -9579,6 +9660,7 @@
 	 */
 	var EventInterface = {
 	  type: null,
+	  target: null,
 	  // currentTarget is set when dispatching; no use in copying it here
 	  currentTarget: emptyFunction.thatReturnsNull,
 	  eventPhase: null,
@@ -9612,8 +9694,6 @@
 	  this.dispatchConfig = dispatchConfig;
 	  this.dispatchMarker = dispatchMarker;
 	  this.nativeEvent = nativeEvent;
-	  this.target = nativeEventTarget;
-	  this.currentTarget = nativeEventTarget;
 
 	  var Interface = this.constructor.Interface;
 	  for (var propName in Interface) {
@@ -9624,7 +9704,11 @@
 	    if (normalize) {
 	      this[propName] = normalize(nativeEvent);
 	    } else {
-	      this[propName] = nativeEvent[propName];
+	      if (propName === 'target') {
+	        this.target = nativeEventTarget;
+	      } else {
+	        this[propName] = nativeEvent[propName];
+	      }
 	    }
 	  }
 
@@ -13473,7 +13557,10 @@
 	      }
 	    });
 
-	    nativeProps.children = content;
+	    if (content) {
+	      nativeProps.children = content;
+	    }
+
 	    return nativeProps;
 	  }
 
@@ -18946,7 +19033,7 @@
 
 	'use strict';
 
-	module.exports = '0.14.6';
+	module.exports = '0.14.7';
 
 /***/ },
 /* 149 */

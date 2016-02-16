@@ -357,3 +357,6 @@ hr {
   margin: 50px auto;
   max-width: 900px;
 }
+.Alert {
+  margin-bottom: 10px;
+}

@@ -11,17 +11,17 @@ if (process.env.NODE_ENV === 'production') {
 
 module.exports = {
   externals: {
-    react: {
-      root: 'React',
-      commonjs: 'react',
-      commonjs2: 'react',
-      amd: 'react'
-    },
     "classnames": {
       "amd": 'classnames',
       "commonjs": 'classnames',
       "commonjs2": 'classnames',
       "root": "classNames"
+    },
+    "react": {
+      root: 'React',
+      commonjs: 'react',
+      commonjs2: 'react',
+      amd: 'react'
     }
   },
 
