@@ -6,7 +6,7 @@ This project is heavily inspired by [Bootstrap 3.x Alert component](http://getbo
 
 ## Installation
 
-The easiest way to use react-alerts is to install it from NPM and include it in yoru React build process (using [Webpack](https://webpack.github.io/), etc).
+The easiest way to use react-alerts is to install it from NPM and include it in your React build process (using [Webpack](https://webpack.github.io/), etc).
 
 ```bash
 npm install react-alerts --save
